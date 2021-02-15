@@ -1,3 +1,4 @@
+import { Menu } from 'antd';
 import { NavLink } from 'react-router-dom';
 import NavLinks from './NavLinks';
 
@@ -5,11 +6,11 @@ const Navbar = ({ classes }) => {
   const rootClass = classes[0];
 
   return (
-    <nav className={classes.join(' ')}>
-      <h6 className={`${rootClass}__brand`}>Richard Arnold</h6>
-      <nav>
-        <ul>
-          {NavLinks.map((link, i) => (
+    <>
+      <div className={`logo ${rootClass}__brand`}>Richard Arnold</div>
+      <Menu theme="light" mode="horizontal">
+        {NavLinks.map((link, i) => (
+          <Menu.Item key={i}>
             <NavLink
               to={link.url}
               key={`NavBarItem-${i + 1}`}
@@ -19,10 +20,10 @@ const Navbar = ({ classes }) => {
             >
               <li>{link.label}</li>
             </NavLink>
-          ))}
-        </ul>
-      </nav>
-    </nav>
+          </Menu.Item>
+        ))}
+      </Menu>
+    </>
   );
 };
 

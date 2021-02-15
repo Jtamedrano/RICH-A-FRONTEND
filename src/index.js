@@ -4,6 +4,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import App from './App';
 
+// Reset Style
+import './scss/indexStyle.scss';
+
 ReactDOM.render(
   <Router>
     <App />
