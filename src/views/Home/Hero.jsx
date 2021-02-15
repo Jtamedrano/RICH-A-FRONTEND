@@ -1,3 +1,5 @@
+import CtaForm from '../../components/CtaForm';
+
 const Hero = () => {
   return (
     <div>
@@ -10,14 +12,9 @@ const Hero = () => {
         </p>
         <p>Vote Richard Arnold for School District Board _____</p>
         <p>Let Richard know you're in!</p>
-        <form>
-          <input placeholder="First Name" />
-          <input placeholder="Last Name" />
-          <input placeholder="Email Address" />
-          <button>Sign Up</button>
-          <button>Donate</button>
-        </form>
+        <CtaForm />
       </div>
+      <div>Image Here</div>
     </div>
   );
 };
