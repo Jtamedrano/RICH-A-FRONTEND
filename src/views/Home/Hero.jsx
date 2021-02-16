@@ -37,7 +37,7 @@ const Hero = () => {
         md={{ order: 2, span: 12 }}
         className="heroImage"
       >
-        <img src="/images/selfie.jpg" alt="Richard Arnold" />
+        <img src="/images/Selfie.jpg" alt="Richard Arnold" />
       </Col>
     </Row>
   );
