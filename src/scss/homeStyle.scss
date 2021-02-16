@@ -1,0 +1,14 @@
+.hero {
+  & #{&}Image {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 768) {
+  .heroImage > img {
+    margin-top: 2em;
+  }
+}
