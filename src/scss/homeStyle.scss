@@ -1,3 +1,15 @@
+@use 'colors' as c;
+
+.logo {
+  font-size: 2em;
+}
+
+.hero,
+.summaryAbout,
+.issueSummary,
+.CTA {
+  padding: 2em 50px;
+}
 .hero {
   & #{&}Image {
     display: flex;
@@ -5,10 +17,73 @@
     align-items: center;
     justify-content: center;
   }
+  button {
+    background-color: c.$primary;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+  }
 }
 
-@media only screen and (max-width: 768) {
+.summaryAbout {
+  margin-top: 2em;
+  background-color: c.$primary;
+  color: #fff;
+  text-align: center;
+  button {
+    background-color: #fff;
+    border-radius: 20px;
+    border: none;
+    color: c.$primary;
+  }
+  .aboutImg {
+    width: 200px;
+    max-width: 90%;
+  }
+}
+
+.issueSummary {
+  text-align: center;
+}
+
+.sumText {
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  justify-content: center;
+  padding: 0 10%;
+}
+
+.CTA {
+  text-align: center;
+}
+
+.codeBehindCTA {
+  background-color: c.$secondary;
+}
+
+@media only screen and (max-width: 768px) {
+  .ant-layout-header {
+    padding: 0 10px;
+  }
+  .logo {
+    font-size: 1.5em;
+  }
+  .hero,
+  .summaryAbout,
+  .issueSummary,
+  .CTA {
+    padding: 2em 25px;
+  }
+
   .heroImage > img {
     margin-top: 2em;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .heroImage > img {
+    width: 100%;
   }
 }

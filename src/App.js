@@ -26,7 +26,7 @@ function App() {
       >
         <Navbar classes={['navbar']} />
       </Header>
-      <Content style={{ padding: '0 50px', marginTop: 80 }}>
+      <Content style={{ marginTop: 80 }}>
         <Route path="/about" component={About} />
         <Route path="/issues" component={Issues} />
         <Route path="/donate" component={DonateView} />
