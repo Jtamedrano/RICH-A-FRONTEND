@@ -1,23 +1,24 @@
-import { Menu } from 'antd';
-import Title from 'antd/lib/typography/Title';
 import { NavLink } from 'react-router-dom';
 import { MenuOutlined } from '@ant-design/icons';
 
 import NavLinks from './NavLinks';
+import useDimension from '../utils/useDimensions';
+import { Menu } from 'antd';
 
 const { SubMenu, Item } = Menu;
 
 const Navbar = ({ classes }) => {
   const rootClass = classes[0];
 
+  const { x } = useDimension();
   return (
     <>
       <p className={`logo ${rootClass}__brand`}>
         <strong>Richard Arnold</strong>
       </p>
       <Menu theme="light" mode="horizontal">
-        <SubMenu icon={<MenuOutlined />}>
-          {NavLinks.map((link, i) => (
+        {x > 768 ? (
+          NavLinks.map((link, i) => (
             <Item key={i}>
               <NavLink
                 to={link.url}
@@ -29,8 +30,24 @@ const Navbar = ({ classes }) => {
                 {link.label}
               </NavLink>
             </Item>
-          ))}
-        </SubMenu>
+          ))
+        ) : (
+          <SubMenu icon={<MenuOutlined />}>
+            {NavLinks.map((link, i) => (
+              <Item key={i}>
+                <NavLink
+                  to={link.url}
+                  key={`NavBarItem-${i + 1}`}
+                  className={`${rootClass}__NavLink${
+                    link.class ? ` ${link.class}` : ''
+                  }`}
+                >
+                  {link.label}
+                </NavLink>
+              </Item>
+            ))}
+          </SubMenu>
+        )}
       </Menu>
     </>
   );

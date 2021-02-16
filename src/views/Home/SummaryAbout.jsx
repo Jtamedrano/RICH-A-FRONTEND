@@ -19,7 +19,6 @@ const SummaryAbout = () => {
           <Title level={3} style={{ color: '#fff' }}>
             About Richard Arnold
           </Title>
-          <p>Public Serviceman</p>
           <p>
             With 24 years of public service with state agencies na institutions
             of higher education, Richard has contributed much of his passion to
