@@ -1,14 +1,107 @@
+@use 'colors' as c;
+
+.logo {
+  font-size: 2em;
+}
+
+.hero,
+.summaryAbout,
+.issueSummary,
+.CTA {
+  padding: 2em 50px;
+}
 .hero {
+  .heroParagraph {
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+  }
+
   & #{&}Image {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
+
+    img {
+      width: 100%;
+    }
+  }
+  button {
+    background-color: c.$primary;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
   }
 }
 
-@media only screen and (max-width: 768) {
+.summaryAbout {
+  margin-top: 2em;
+  background-color: c.$primary;
+  color: #fff;
+  text-align: center;
+  button {
+    background-color: #fff;
+    border-radius: 20px;
+    border: none;
+    color: c.$primary;
+  }
+  .aboutImg {
+    width: 200px;
+    max-width: 90%;
+  }
+}
+
+.issueSummary {
+  text-align: center;
+}
+
+.sumText {
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  justify-content: center;
+  padding: 0 10%;
+}
+
+.CTA {
+  text-align: center;
+  color: #fff;
+
+  h2,
+  label {
+    color: #fff;
+  }
+}
+
+.codeBehindCTA {
+  background-color: c.$primary;
+}
+
+@media only screen and (max-width: 768px) {
+  .ant-layout-header {
+    padding: 0 25px;
+  }
+  .logo {
+    font-size: 1.5em;
+  }
+  .hero,
+  .summaryAbout,
+  .issueSummary,
+  .CTA {
+    padding: 2em 25px;
+  }
+
   .heroImage > img {
     margin-top: 2em;
+    height: 200px;
+    object-fit: contain;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .heroImage > img {
+    width: 100%;
   }
 }

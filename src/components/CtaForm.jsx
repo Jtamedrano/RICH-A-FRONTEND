@@ -4,7 +4,12 @@ const CtaForm = ({ rootClass }) => {
   const [form] = Form.useForm();
 
   return (
-    <Form layout="vertical" form={form} className={rootClass}>
+    <Form
+      layout="vertical"
+      form={form}
+      className={rootClass}
+      style={{ maxWidth: '800px', margin: '0 auto' }}
+    >
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} wrap={true}>
         <Col span="12">
           <Form.Item label="First Name" name="firstname">

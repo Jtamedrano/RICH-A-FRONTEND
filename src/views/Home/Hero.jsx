@@ -1,4 +1,5 @@
 import { Row, Col } from 'antd';
+import Title from 'antd/lib/typography/Title';
 import React from 'react';
 import CtaForm from '../../components/CtaForm';
 
@@ -11,30 +12,32 @@ const Hero = () => {
       gutter={[16, 16]}
     >
       <Col
-        span={12}
         xs={{ order: 2, span: 24 }}
         sm={{ order: 2, span: 24 }}
         md={{ order: 1, span: 12 }}
-        className="heroText"
+        className="heroParagraph"
       >
-        <h1>Corvallis is ready for action</h1>
+        <Title level={2}>Corvallis ready for change</Title>
         <p>
-          Every student deserves the opportunity to strive for a higher purpose,
-          but until our school board has leadership in place to accomplish this
-          goal, we run the risk of taking that away from our children.
+          Every student deserves the opportunity to reach their full academic
+          potential, but until our school board has leadership in place that
+          begins to focus on helping our student’s improving their lagging
+          academic achievement this will never occur.
         </p>
-        <p>Vote Richard Arnold for School District Board _____</p>
+        <p>
+          <strong>Elect Richard Arnold</strong> to{' '}
+          <strong>Corvallis School Board Position #4</strong>
+        </p>
         <p>Let Richard know you're in!</p>
         <CtaForm rootClass="heroCta" />
       </Col>
       <Col
-        span={12}
-        className="heroImage"
         xs={{ order: 1, span: 24 }}
         sm={{ order: 1, span: 24 }}
         md={{ order: 2, span: 12 }}
+        className="heroImage"
       >
-        <img src="/images/sb-logo.png" alt="Corvallis School Board Logo" />
+        <img src="/images/selfie.jpg" alt="Richard Arnold" />
       </Col>
     </Row>
   );
