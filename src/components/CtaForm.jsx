@@ -1,6 +1,6 @@
 import { Button, Col, Form, Input, Row } from 'antd';
 
-const CtaForm = ({ rootClass }) => {
+const CtaForm = ({ rootClass = 'CTA' }) => {
   const [form] = Form.useForm();
 
   return (

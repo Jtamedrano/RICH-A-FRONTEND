@@ -20,8 +20,6 @@ function App() {
           zIndex: 1,
           width: '100%',
           backgroundColor: '#ffffff',
-          display: 'flex',
-          justifyContent: 'space-between',
         }}
       >
         <Navbar classes={['navbar']} />

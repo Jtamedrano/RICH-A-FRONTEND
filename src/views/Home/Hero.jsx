@@ -5,16 +5,12 @@ import CtaForm from '../../components/CtaForm';
 
 const Hero = () => {
   return (
-    <Row
-      className="hero"
-      justify="space-between"
-      align="middle"
-      gutter={[16, 16]}
-    >
+    <Row className="hero" justify="space-between" align="middle">
       <Col
         xs={{ order: 2, span: 24 }}
         sm={{ order: 2, span: 24 }}
         md={{ order: 1, span: 12 }}
+        lg={{ order: 1, span: 16 }}
         className="heroParagraph"
       >
         <Title level={2}>Corvallis ready for change</Title>
@@ -35,6 +31,7 @@ const Hero = () => {
         xs={{ order: 1, span: 24 }}
         sm={{ order: 1, span: 24 }}
         md={{ order: 2, span: 12 }}
+        lg={{ order: 2, span: 8 }}
         className="heroImage"
       >
         <img src="/images/Selfie.jpg" alt="Richard Arnold" />

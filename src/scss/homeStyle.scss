@@ -2,15 +2,21 @@
 
 .logo {
   font-size: 2em;
+  flex: 0 1 25%;
 }
 
-.hero,
 .summaryAbout,
 .issueSummary,
 .CTA {
+  margin: 0 auto;
   padding: 2em 50px;
+  max-width: 1920px;
 }
 .hero {
+  padding: 2em 50px;
+  max-width: 1920px;
+  margin: 0 auto;
+
   .heroParagraph {
     margin: 0 auto;
     max-width: 800px;
@@ -25,21 +31,34 @@
 
     img {
       width: 100%;
+      max-width: 300px;
+      object-fit: contain;
     }
   }
-  button {
+  .heroCta__SignUpButton {
+    background-color: transparent;
+    border-radius: 20px;
+    border: 2px solid c.$primary;
+    font-weight: 600;
+    color: c.$primary;
+  }
+  .heroCta__DonateButton {
     background-color: c.$primary;
     border-radius: 20px;
-    border: none;
+    border: 2px solid transparent;
     color: #fff;
+    font-weight: 600;
   }
 }
 
 .summaryAbout {
   margin-top: 2em;
+  padding-top: 2.5em;
   background-color: c.$primary;
   color: #fff;
   text-align: center;
+  overflow: hidden;
+  position: relative;
   button {
     background-color: #fff;
     border-radius: 20px;
@@ -47,8 +66,12 @@
     color: c.$primary;
   }
   .aboutImg {
-    width: 200px;
-    max-width: 90%;
+    position: absolute;
+    align-self: center;
+    object-position: 0 -100px;
+    width: 600px;
+    height: 250px;
+    object-fit: cover;
   }
 }
 
@@ -73,6 +96,20 @@
   label {
     color: #fff;
   }
+  .CTA__SignUpButton {
+    background-color: transparent;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    font-weight: 600;
+    color: #fff;
+  }
+  .CTA__DonateButton {
+    background-color: #fff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    color: c.$primary;
+    font-weight: 600;
+  }
 }
 
 .codeBehindCTA {
@@ -96,7 +133,6 @@
   .heroImage > img {
     margin-top: 2em;
     height: 200px;
-    object-fit: contain;
   }
 }
 

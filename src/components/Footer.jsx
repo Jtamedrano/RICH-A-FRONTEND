@@ -6,7 +6,10 @@ import NavLinks from './NavLinks';
 const Footer = () => {
   return (
     <footer>
-      <Row justify="space-between">
+      <Row
+        justify="space-between"
+        style={{ maxWidth: '1920px', margin: '0 auto' }}
+      >
         <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 12 }}>
           <div className="footerRight">
             <Paragraph>
@@ -18,7 +21,7 @@ const Footer = () => {
           </div>
         </Col>
         <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 12 }}>
-          <div className="footerLeft">
+          <div className="footerLeft" style={{ textAlign: 'right' }}>
             <h4>Navigation</h4>
             <Row gutter={[24]} justify="space-around">
               {NavLinks.map((link, i) => (
@@ -26,7 +29,7 @@ const Footer = () => {
                   key={`footer-navLink-${i}`}
                   xs={{ span: 24 }}
                   sm={{ span: 24 }}
-                  md={{ span: 6 }}
+                  md={{ span: 24 }}
                 >
                   <Link to={link.url}>{link.label}</Link>
                 </Col>

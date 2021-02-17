@@ -12,7 +12,16 @@ const Navbar = ({ classes }) => {
 
   const { x } = useDimension();
   return (
-    <>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        width: '100%',
+        maxWidth: '1920px',
+        margin: '0 auto',
+        height: '100%',
+      }}
+    >
       <p className={`logo ${rootClass}__brand`}>
         <strong>Richard Arnold</strong>
       </p>
@@ -53,7 +62,7 @@ const Navbar = ({ classes }) => {
           </SubMenu>
         )}
       </Menu>
-    </>
+    </div>
   );
 };
 
