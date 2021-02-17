@@ -116,6 +116,12 @@
   background-color: c.$primary;
 }
 
+footer {
+  .footerLeft {
+    text-align: right;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .ant-layout-header {
     padding: 0 25px;
@@ -138,6 +144,12 @@
     .aboutImg {
       position: relative;
       margin-bottom: 1em;
+    }
+  }
+  footer {
+    .footerLeft,
+    .footerRight {
+      text-align: center;
     }
   }
 }
