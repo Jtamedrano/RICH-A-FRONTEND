@@ -134,6 +134,12 @@
     margin-top: 2em;
     height: 200px;
   }
+  .summaryAbout {
+    .aboutImg {
+      position: relative;
+      margin-bottom: 1em;
+    }
+  }
 }
 
 @media only screen and (max-width: 400px) {
