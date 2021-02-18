@@ -1,0 +1,84 @@
+@use './colors' as c;
+
+.paymentView {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.payment {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 50%;
+}
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  label {
+    margin-right: 1em;
+  }
+  .valueInput {
+    align-self: center;
+    flex: 1;
+    padding: 0.25em 0.75em;
+    border-radius: 1em;
+    border: 1px solid #333;
+    text-align: center;
+    background: rgba(0255, 0255, 0255, 0.9);
+  }
+}
+
+.optionButtonRack {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  .inputWrapper {
+    width: 100%;
+    flex: 1 0;
+  }
+}
+.selectDonationBtn {
+  flex-basis: 20%;
+  height: 75px;
+  background-color: c.$primary;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em 1em;
+  align-self: center;
+  border-radius: 1em;
+}
+
+.paymentArea {
+  margin-top: 1em;
+  width: 100%;
+  .paymentDetail {
+    margin-top: 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 8vh;
+    flex: 1;
+    form {
+      flex: 1;
+    }
+  }
+  #submitPaymentButton {
+    background-color: c.$primary;
+    border-radius: 1em;
+    font-weight: 500;
+    color: #fff;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .payment {
+    width: 90%;
+  }
+}

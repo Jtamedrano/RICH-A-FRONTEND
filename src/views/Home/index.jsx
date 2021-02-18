@@ -1,3 +1,4 @@
+import React from 'react';
 import CTA from './CTA';
 import Hero from './Hero';
 import IssueSummary from './Issues';

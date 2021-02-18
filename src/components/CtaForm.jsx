@@ -1,7 +1,29 @@
 import { Button, Col, Form, Input, Row } from 'antd';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { v4 } from 'uuid';
+import { addSubscriber } from '../redux/actions';
 
 const CtaForm = ({ rootClass = 'CTA' }) => {
+  const [formState, setFormState] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+  });
+
+  const dispatch = useDispatch();
   const [form] = Form.useForm();
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setFormState({ ...formState, [e.target.name]: e.target.value });
+  };
+
+  const handleSignUpClick = (e) => {
+    e.preventDefault();
+    console.log('click');
+    dispatch(addSubscriber({ ...formState, id: v4() }));
+  };
 
   return (
     <Form
@@ -14,21 +36,32 @@ const CtaForm = ({ rootClass = 'CTA' }) => {
         <Col span="12">
           <Form.Item label="First Name" name="firstname">
             <Input
-            // className={`${rootClass}__FirstNameInput`}
-            // placeholder="First Name"
+              // className={`${rootClass}__FirstNameInput`}
+              // placeholder="First Name"
+              name="firstName"
+              value={formState.firstName}
+              onChange={handleChange}
             />
           </Form.Item>
         </Col>
         <Col span="12">
           <Form.Item label="Last Name" name="lastname">
-            <Input />
+            <Input
+              name="lastName"
+              value={formState.lastName}
+              onChange={handleChange}
+            />
           </Form.Item>
         </Col>
       </Row>
       <Row>
         <Col span="24">
           <Form.Item label="Email" name="email">
-            <Input />
+            <Input
+              name="email"
+              value={formState.email}
+              onChange={handleChange}
+            />
           </Form.Item>
         </Col>
       </Row>
@@ -38,6 +71,7 @@ const CtaForm = ({ rootClass = 'CTA' }) => {
             style={{ width: '100%' }}
             type="primary"
             className={`${rootClass}__SignUpButton`}
+            onClick={handleSignUpClick}
           >
             Sign Up
           </Button>

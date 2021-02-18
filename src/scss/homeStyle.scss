@@ -29,17 +29,11 @@
     justify-content: center;
 
     img {
+      margin: 2em;
       width: 100%;
       max-width: 300px;
       object-fit: contain;
     }
-  }
-  .heroCta__SignUpButton {
-    background-color: transparent;
-    border-radius: 20px;
-    border: 2px solid c.$primary;
-    font-weight: 600;
-    color: c.$primary;
   }
   .heroCta__DonateButton {
     background-color: c.$primary;
@@ -48,6 +42,13 @@
     color: #fff;
     font-weight: 600;
   }
+}
+.heroCta__SignUpButton {
+  background-color: transparent;
+  border-radius: 20px;
+  border: 2px solid c.$primary;
+  font-weight: 600;
+  color: c.$primary;
 }
 
 .summaryAbout {
@@ -66,8 +67,8 @@
   }
   .aboutImg {
     position: absolute;
-    align-self: center;
-    object-position: 0 -100px;
+    align-self: flex-end;
+    object-position: 0 -50px;
     width: 600px;
     height: 250px;
     object-fit: cover;
