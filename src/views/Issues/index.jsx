@@ -50,6 +50,7 @@ const IssuesView = () => {
   return (
     <>
       <h2 style={{ textAlign: "center" }}>Issues</h2>
+      <p>(Click One to Read More)</p>
       <Collapse accordion>
         {articles.map((e, i) => {
           return (
