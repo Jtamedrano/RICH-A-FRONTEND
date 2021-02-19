@@ -1,12 +1,9 @@
 import { Row, Col } from "antd";
 import Title from "antd/lib/typography/Title";
 import React from "react";
-import { useSelector } from "react-redux";
 import CtaForm from "../../components/CtaForm";
 
 const Hero = () => {
-  const sub = useSelector((state) => state.subscriber.currentSubscriber);
-  console.log(sub);
   return (
     <Row className="hero" justify="space-between" align="middle">
       <Col
@@ -27,21 +24,7 @@ const Hero = () => {
           <strong>Elect Richard Arnold</strong> to{" "}
           <strong>Corvallis School Board Position #4</strong>
         </p>
-        {sub.firstName ? (
-          <>
-            <p style={{ fontWeight: 600, fontSize: "3vw" }}>
-              Welcome, {sub.firstName}
-            </p>
-            <button className="heroCta__DonateButton">
-              Support Our Movement
-            </button>
-          </>
-        ) : (
-          <>
-            <p>Let Richard know you're in!</p>
-            <CtaForm rootClass="heroCta" />
-          </>
-        )}
+        <CtaForm rootClass="heroCta" />
       </Col>
       <Col
         xs={{ order: 1, span: 24 }}

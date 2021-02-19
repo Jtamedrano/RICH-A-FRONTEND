@@ -29,15 +29,17 @@ const SelectionButton = ({ value, setDonationAmount }) => {
 const donationOptions = [5, 10, 20, 25, 50, 100];
 
 const DonationSelect = (props) => {
-  const [disabled, setDisabled] = useState(true);
   const [error, setError] = useState(null);
-  const [succeeded, setSucceeded] = useState(false);
   const [processing, setProcessing] = useState(false);
 
   const history = useHistory();
 
   const stripe = useStripe();
   const elements = useElements();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -1,9 +1,9 @@
-import { db } from '../../firebase';
+import { db } from "../../firebase";
 
 const dispatchNewSub = (sub) => {
-  window.localStorage.setItem('sub', JSON.stringify(sub));
+  window.localStorage.setItem("sub", JSON.stringify(sub));
   return {
-    type: 'ADD_SUBSCRIBER',
+    type: "ADD_SUBSCRIBER",
     payload: sub,
   };
 };
@@ -11,13 +11,12 @@ const dispatchNewSub = (sub) => {
 let exist = false;
 
 const setExist = async (res) => {
-  console.log('set', res);
   exist = res;
 };
 
 export const addSubscriber = (subscriber) => (dispatch) => {
-  console.log('add');
-  db.collection('subscribers')
+  console.log("add");
+  db.collection("subscribers")
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach(async (doc) => {
@@ -35,7 +34,7 @@ export const addSubscriber = (subscriber) => (dispatch) => {
         }
       });
       if (exist) {
-        db.collection('subscribers')
+        db.collection("subscribers")
           .add({ ...subscriber })
           .then((doc) => {
             dispatch(dispatchNewSub(subscriber));
