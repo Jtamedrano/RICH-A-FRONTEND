@@ -1,6 +1,7 @@
 @import "~antd/dist/antd.css";
 @import "./homeStyle.scss";
 @import "./donationStyle.scss";
+@import "./issuesStyle.scss";
 
 * {
   scroll-behavior: smooth;
@@ -12,13 +13,31 @@ body {
 }
 body {
   position: relative;
-  min-height: 100vh;
 }
 .window {
   position: relative;
+  min-height: 100vh;
+
+  .logo {
+    font-size: 1.5em;
+    a {
+      color: black;
+    }
+  }
   .mainContent {
-    margin-top: 80px;
+    margin-top: 65px;
     margin-bottom: 150px;
+    position: relative;
+    .paymentBackground {
+      position: absolute;
+      z-index: 0;
+      left: 0;
+      height: 100%;
+      img {
+        height: 100%;
+        mask-image: linear-gradient(to left, transparent 70%, #f1f2f5 90%);
+      }
+    }
   }
   footer {
     position: absolute;
@@ -59,10 +78,26 @@ body {
   }
 }
 
-@media only screen and (max-width: 765px) {
+@media only screen and (max-width: 768px) {
   .window {
+    .logo {
+      font-size: 1em;
+      margin: 0;
+      padding: 0;
+    }
     .mainContent {
-      margin-bottom: 230px;
+      margin-bottom: 280px;
+      .paymentBackground {
+        position: relative;
+        height: 80px;
+        width: 100%;
+        img {
+          width: 100%;
+          object-fit: cover;
+          height: 100%;
+          mask-image: none;
+        }
+      }
     }
     footer {
       .footerContent {
@@ -74,6 +109,13 @@ body {
       .footerRight {
         text-align: center;
       }
+    }
+  }
+}
+@media only screen and (max-width: 300px) {
+  .window {
+    .logo {
+      font-size: 0.8em;
     }
   }
 }

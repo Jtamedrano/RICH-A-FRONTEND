@@ -1,12 +1,5 @@
 @use 'colors' as c;
 
-.logo {
-  font-size: 2em;
-  a {
-    color: black;
-  }
-}
-
 .summaryAbout,
 .issueSummary,
 .CTA {
@@ -35,7 +28,7 @@
     justify-self: center;
     max-height: 375px;
 
-    mask-image: radial-gradient(farthest-side, #fff 70%, transparent 95%);
+    mask-image: radial-gradient(farthest-side, #fff 80%, transparent 100%);
     img {
       height: 100%;
       width: 100%;
@@ -64,9 +57,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    &:hover {
+      opacity: 0.8;
+    }
+    &:active {
+      opacity: 1;
+    }
   }
   .heroCta__DonateButton {
-    color: #000000d9;
     background-color: c.$primary;
     border-radius: 20px;
     border: 2px solid transparent;
@@ -74,20 +72,23 @@
     font-weight: 600;
   }
   .heroCta__SignUpButton {
-    color: #000000d9;
     background-color: transparent;
     border-radius: 20px;
     border: 2px solid c.$primary;
     font-weight: 600;
     color: c.$primary;
+    &:hover {
+      background-color: c.$primary;
+      color: #fff;
+    }
   }
   .heroCta__SupportDonateButton {
-    color: #000000d9;
     background-color: c.$primary;
     border-radius: 20px;
     border: 2px solid transparent;
     font-weight: 600;
     color: #fff;
+    margin: 0 auto;
   }
 }
 

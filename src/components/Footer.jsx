@@ -14,7 +14,7 @@ const Footer = () => {
         <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 12 }}>
           <div className="footerLeft">
             <Paragraph>
-              This page is paid for by the Richard Arnold Foundation
+              This page is paid for by Richard Arnold for Oregon
             </Paragraph>
             <Paragraph>
               Design By Jesse Medrano from JavaScript Lifestyle
