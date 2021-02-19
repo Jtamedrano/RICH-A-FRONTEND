@@ -1,12 +1,5 @@
 @use 'colors' as c;
 
-.logo {
-  font-size: 2em;
-  a {
-    color: black;
-  }
-}
-
 .summaryAbout,
 .issueSummary,
 .CTA {
@@ -30,16 +23,16 @@
     color: #000000d9;
   }
   & #{&}Image {
-    display: flex;
     width: 100%;
-    align-items: center;
-    justify-content: center;
+    align-self: stretch;
+    justify-self: center;
+    max-height: 375px;
 
+    mask-image: radial-gradient(farthest-side, #fff 80%, transparent 100%);
     img {
-      margin: 2em;
+      height: 100%;
       width: 100%;
-      max-width: 300px;
-      object-fit: contain;
+      object-fit: cover;
       transition: all 0.2s ease-in-out;
     }
   }
@@ -64,9 +57,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    &:hover {
+      opacity: 0.8;
+    }
+    &:active {
+      opacity: 1;
+    }
   }
   .heroCta__DonateButton {
-    color: #000000d9;
     background-color: c.$primary;
     border-radius: 20px;
     border: 2px solid transparent;
@@ -74,20 +72,23 @@
     font-weight: 600;
   }
   .heroCta__SignUpButton {
-    color: #000000d9;
     background-color: transparent;
     border-radius: 20px;
     border: 2px solid c.$primary;
     font-weight: 600;
     color: c.$primary;
+    &:hover {
+      background-color: c.$primary;
+      color: #fff;
+    }
   }
   .heroCta__SupportDonateButton {
-    color: #000000d9;
     background-color: c.$primary;
     border-radius: 20px;
     border: 2px solid transparent;
     font-weight: 600;
     color: #fff;
+    margin: 0 auto;
   }
 }
 
@@ -178,6 +179,18 @@ footer {
     text-align: right;
   }
 }
+@media only screen and (max-width: 991px) {
+  .hero {
+    .heroImage {
+      mask: none;
+      img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
 
 @media only screen and (max-width: 765px) {
   .ant-layout-header {
@@ -198,13 +211,13 @@ footer {
       margin: 0.25em;
     }
     .heroImage {
-      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      mask: none;
       img {
-        width: 100%;
-        margin-top: 2em;
         height: 200px;
-        object-fit: cover;
-        object-position: 0 -10px;
+        object-fit: contain;
       }
     }
   }
@@ -217,19 +230,16 @@ footer {
       object-position: 0 -55px;
     }
   }
-  footer {
-    .footerLeft,
-    .footerRight {
-      text-align: center;
-    }
-  }
 }
 
-@media only screen and (max-width: 400px) {
-  .heroImage {
-    width: 100%;
-    img {
+@media only screen and (max-width: 255px) {
+  .hero {
+    .heroImage {
       width: 100%;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
     }
   }
 }

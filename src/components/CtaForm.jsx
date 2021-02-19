@@ -42,6 +42,7 @@ const CtaForm = ({ rootClass = "CTA" }) => {
     email: "",
   });
 
+  const history = useHistory();
   const dispatch = useDispatch();
   const [form] = Form.useForm();
 
@@ -116,6 +117,10 @@ const CtaForm = ({ rootClass = "CTA" }) => {
             </Col>
             <Col span="12" flex="auto">
               <Button
+                onClick={(e) => {
+                  e.preventDefault();
+                  history.push("/donate");
+                }}
                 style={{ width: "100%" }}
                 type="primary"
                 className={`${rootClass}__DonateButton`}

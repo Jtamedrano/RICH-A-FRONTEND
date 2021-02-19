@@ -68,7 +68,7 @@ const DonationSelect = (props) => {
 
   return (
     <div className="payment">
-      <div>Choose An Amount</div>
+      <h2>Support Our Mission</h2>
       <div className="optionButtonRack">
         {donationOptions.map((option) => {
           return (
@@ -98,7 +98,7 @@ const DonationSelect = (props) => {
           />
         </div>
       </div>
-      {props.donateAmount && (
+      {props.donateAmount > 0 && (
         <div className="paymentArea">
           <p>You selected a one-time payment of ${props.donateAmount}.</p>
           <div className="paymentDetail">
@@ -144,19 +144,22 @@ const DonateView = () => {
   };
 
   return (
-    <div className="paymentView">
-      <h2>Donation Page</h2>
-
-      {donationSlide === 0 && (
-        <Elements stripe={promise}>
-          <DonationSelect
-            donateAmount={donateAmount}
-            setDonateAmount={(amount) => setDonateAmount(amount)}
-            pushToNextSlide={pushToNextSlide}
-          />
-        </Elements>
-      )}
-    </div>
+    <>
+      <div className="paymentBackground">
+        <img src="/images/students.png" alt="students graduating" />
+      </div>
+      <div className="paymentView">
+        {donationSlide === 0 && (
+          <Elements stripe={promise}>
+            <DonationSelect
+              donateAmount={donateAmount}
+              setDonateAmount={(amount) => setDonateAmount(amount)}
+              pushToNextSlide={pushToNextSlide}
+            />
+          </Elements>
+        )}
+      </div>
+    </>
   );
 };
 

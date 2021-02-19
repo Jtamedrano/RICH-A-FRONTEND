@@ -24,13 +24,20 @@ const articles = [
   ],
 ];
 
-const headers = ["header1", "header2"];
+const headers = [
+  "The Annual District School Budget and How It Affects Our Students",
+  "The plan to get students back in school",
+];
 
 const Article = ({ article }) => {
   return (
     <>
       {article.map((par) => {
-        return <article style={{ padding: ".75em .25em" }}>{par}</article>;
+        return (
+          <article className="issueArticle" style={{}}>
+            {par}
+          </article>
+        );
       })}
     </>
   );
@@ -43,11 +50,17 @@ const IssuesView = () => {
   return (
     <>
       <h2 style={{ textAlign: "center" }}>Issues</h2>
+      <p>(Click One to Read More)</p>
       <Collapse accordion>
         {articles.map((e, i) => {
           return (
             <>
-              <Collapse.Panel header={headers[0]} key={i + 1}>
+              <Collapse.Panel
+                header={headers[i]}
+                style={{ textAlign: "center" }}
+                key={i + 1}
+              >
+                <h3 className="articleMainHeader">{headers[i]}</h3>
                 <Article article={e} />
               </Collapse.Panel>
             </>

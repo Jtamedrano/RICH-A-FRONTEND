@@ -1,9 +1,9 @@
-import { Button, Col, Row } from 'antd';
-import Title from 'antd/lib/typography/Title';
-import { Link } from 'react-router-dom';
+import { Button, Col, Row } from "antd";
+import Title from "antd/lib/typography/Title";
+import { Link } from "react-router-dom";
 
 const SummaryAbout = () => {
-  const rootClass = 'summaryAbout';
+  const rootClass = "summaryAbout";
 
   return (
     <div className="codeBehindCTA">
@@ -13,9 +13,9 @@ const SummaryAbout = () => {
           sm={{ span: 24 }}
           md={{ span: 12 }}
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           <img
@@ -26,7 +26,7 @@ const SummaryAbout = () => {
         </Col>
         <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 12 }}>
           <div className="sumText">
-            <Title level={3} style={{ color: '#fff' }}>
+            <Title level={3} style={{ color: "#fff" }}>
               About Richard Arnold
             </Title>
             <p>
@@ -35,7 +35,7 @@ const SummaryAbout = () => {
               his passion to ensuring students get the education they deserve.
             </p>
             <Link to="/about">
-              <Button>Learn More About Richard</Button>
+              <Button>Learn More</Button>
             </Link>
           </div>
         </Col>

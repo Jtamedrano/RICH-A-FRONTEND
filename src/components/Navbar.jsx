@@ -24,7 +24,9 @@ const Navbar = ({ classes }) => {
     >
       <p className={`logo ${rootClass}__brand`}>
         <Link to="/">
-          <strong>Richard Arnold</strong>
+          <strong>
+            <span style={{ color: "#e43a49" }}>RICH</span>ARD ARNOLD
+          </strong>
         </Link>
       </p>
       <Menu

@@ -5,7 +5,7 @@ import CtaForm from "../../components/CtaForm";
 
 const Hero = () => {
   return (
-    <Row className="hero" justify="space-between" align="middle">
+    <Row gutter={8 * 6} className="hero" justify="space-between" align="middle">
       <Col
         xs={{ order: 2, span: 24 }}
         sm={{ order: 2, span: 24 }}
@@ -13,7 +13,7 @@ const Hero = () => {
         lg={{ order: 1, span: 16 }}
         className="heroParagraph"
       >
-        <Title level={2}>Corvallis ready for change</Title>
+        <Title level={2}>Corvallis, Ready For Change</Title>
         <p>
           Every student deserves the opportunity to reach their full academic
           potential, but until our school board has leadership in place that
