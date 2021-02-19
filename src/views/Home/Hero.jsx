@@ -5,7 +5,7 @@ import CtaForm from "../../components/CtaForm";
 
 const Hero = () => {
   return (
-    <Row className="hero" justify="space-between" align="middle">
+    <Row gutter={8 * 6} className="hero" justify="space-between" align="middle">
       <Col
         xs={{ order: 2, span: 24 }}
         sm={{ order: 2, span: 24 }}

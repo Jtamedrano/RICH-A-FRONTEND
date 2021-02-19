@@ -68,7 +68,7 @@ const DonationSelect = (props) => {
 
   return (
     <div className="payment">
-      <div>Choose An Amount</div>
+      <div>Support Our Mission</div>
       <div className="optionButtonRack">
         {donationOptions.map((option) => {
           return (

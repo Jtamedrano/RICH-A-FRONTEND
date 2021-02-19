@@ -1,6 +1,6 @@
-@import '~antd/dist/antd.css';
-@import './homeStyle.scss';
-@import './donationStyle.scss';
+@import "~antd/dist/antd.css";
+@import "./homeStyle.scss";
+@import "./donationStyle.scss";
 
 * {
   scroll-behavior: smooth;
@@ -13,4 +13,67 @@ body {
 body {
   position: relative;
   min-height: 100vh;
+}
+.window {
+  position: relative;
+  .mainContent {
+    margin-top: 80px;
+    margin-bottom: 150px;
+  }
+  footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1em;
+    .footerContent {
+      width: 80%;
+    }
+    .footerLeft {
+      text-align: left;
+    }
+    .footerRight {
+      text-align: right;
+      a {
+        position: relative;
+        color: #000000d9;
+      }
+      a:before {
+        position: absolute;
+        content: "";
+        border-bottom: 1px solid black;
+        bottom: -3px;
+        left: 50%;
+        right: 50%;
+        transition: all 0.2s ease-in-out;
+      }
+      a:hover:before {
+        position: absolute;
+        content: "";
+        border-bottom: 1px solid black;
+        bottom: -3px;
+        left: 0%;
+        right: 0%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 765px) {
+  .window {
+    .mainContent {
+      margin-bottom: 230px;
+    }
+    footer {
+      .footerContent {
+        width: 80%;
+      }
+      .footerLeft {
+        text-align: center;
+      }
+      .footerRight {
+        text-align: center;
+      }
+    }
+  }
 }

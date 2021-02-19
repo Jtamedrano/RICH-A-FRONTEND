@@ -1,30 +1,30 @@
-import { Route } from 'react-router';
+import { Route } from "react-router";
 
 // Components
-import Navbar from './components/Navbar';
-import Home from './views/Home';
-import About from './views/About';
-import Issues from './views/Issues';
-import FooterView from './components/Footer';
-import DonateView from './views/Donate';
-import { Layout } from 'antd';
+import Navbar from "./components/Navbar";
+import Home from "./views/Home";
+import About from "./views/About";
+import Issues from "./views/Issues";
+import FooterView from "./components/Footer";
+import DonateView from "./views/Donate";
+import { Layout } from "antd";
 
 const { Header, Footer, Content } = Layout;
 
 function App() {
   return (
-    <Layout>
+    <Layout className="window">
       <Header
         style={{
-          position: 'fixed',
+          position: "fixed",
           zIndex: 1,
-          width: '100%',
-          backgroundColor: '#ffffff',
+          width: "100%",
+          backgroundColor: "#ffffff",
         }}
       >
-        <Navbar classes={['navbar']} />
+        <Navbar classes={["navbar"]} />
       </Header>
-      <Content style={{ marginTop: 80 }}>
+      <Content className="mainContent">
         <Route path="/about" component={About} />
         <Route path="/issues" component={Issues} />
         <Route path="/donate" component={DonateView} />
