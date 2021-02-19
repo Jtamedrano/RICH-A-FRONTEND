@@ -1,7 +1,7 @@
-import { Row, Col } from 'antd';
-import Title from 'antd/lib/typography/Title';
-import React from 'react';
-import CtaForm from '../../components/CtaForm';
+import { Row, Col } from "antd";
+import Title from "antd/lib/typography/Title";
+import React from "react";
+import CtaForm from "../../components/CtaForm";
 
 const Hero = () => {
   return (
@@ -9,7 +9,7 @@ const Hero = () => {
       <Col
         xs={{ order: 2, span: 24 }}
         sm={{ order: 2, span: 24 }}
-        md={{ order: 1, span: 12 }}
+        md={{ order: 2, span: 24 }}
         lg={{ order: 1, span: 16 }}
         className="heroParagraph"
       >
@@ -21,20 +21,19 @@ const Hero = () => {
           academic achievement this will never occur.
         </p>
         <p>
-          <strong>Elect Richard Arnold</strong> to{' '}
+          <strong>Elect Richard Arnold</strong> to{" "}
           <strong>Corvallis School Board Position #4</strong>
         </p>
-        <p>Let Richard know you're in!</p>
         <CtaForm rootClass="heroCta" />
       </Col>
       <Col
         xs={{ order: 1, span: 24 }}
         sm={{ order: 1, span: 24 }}
-        md={{ order: 2, span: 12 }}
+        md={{ order: 1, span: 24 }}
         lg={{ order: 2, span: 8 }}
         className="heroImage"
       >
-        <img src="/images/Selfie.jpg" alt="Richard Arnold" />
+        <img src="/images/Selfie.png" alt="Richard Arnold" />
       </Col>
     </Row>
   );

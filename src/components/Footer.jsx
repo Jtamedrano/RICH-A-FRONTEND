@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
         </Col>
         <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 12 }}>
-          <div className="footerLeft" style={{ textAlign: 'right' }}>
+          <div className="footerLeft">
             <h4>Navigation</h4>
             <Row gutter={[24]} justify="space-around">
               {NavLinks.map((link, i) => (

@@ -2,7 +2,9 @@
 
 .logo {
   font-size: 2em;
-  flex: 0 1 25%;
+  a {
+    color: black;
+  }
 }
 
 .summaryAbout,
@@ -22,7 +24,11 @@
     max-width: 800px;
     text-align: center;
   }
-
+  .existingSub {
+    font-weight: 600;
+    font-size: 3vw;
+    color: #000000d9;
+  }
   & #{&}Image {
     display: flex;
     width: 100%;
@@ -30,24 +36,55 @@
     justify-content: center;
 
     img {
+      margin: 2em;
       width: 100%;
       max-width: 300px;
       object-fit: contain;
+      transition: all 0.2s ease-in-out;
     }
   }
+}
+.hero {
+  color: #000000d9;
+  .heroCta_existingSub {
+    padding: 0;
+    margin: 0;
+    font-size: 3.5em;
+  }
+  .heroCta_signOutLink {
+    padding: 0;
+    margin: 0 0 1em;
+    text-decoration: underline;
+    color: purple;
+  }
+  .heroCta__DonateButton,
+  .heroCta__SignUpButton,
+  .heroCta__SupportDonateButton {
+    padding: 1em 2em;
+  }
+  .heroCta__DonateButton {
+    color: #000000d9;
+    background-color: c.$primary;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    color: #fff;
+    font-weight: 600;
+  }
   .heroCta__SignUpButton {
+    color: #000000d9;
     background-color: transparent;
     border-radius: 20px;
     border: 2px solid c.$primary;
     font-weight: 600;
     color: c.$primary;
   }
-  .heroCta__DonateButton {
+  .heroCta__SupportDonateButton {
+    color: #000000d9;
     background-color: c.$primary;
     border-radius: 20px;
     border: 2px solid transparent;
-    color: #fff;
     font-weight: 600;
+    color: #fff;
   }
 }
 
@@ -59,6 +96,8 @@
   text-align: center;
   overflow: hidden;
   position: relative;
+  min-height: 300px;
+
   button {
     background-color: #fff;
     border-radius: 20px;
@@ -67,8 +106,8 @@
   }
   .aboutImg {
     position: absolute;
-    align-self: center;
-    object-position: 0 -100px;
+    align-self: flex-end;
+    object-position: 0 -95px;
     width: 600px;
     height: 250px;
     object-fit: cover;
@@ -96,6 +135,14 @@
   label {
     color: #fff;
   }
+  .CTA_existingSub {
+    padding: 0;
+    margin: 0;
+    font-size: 3.5em;
+  }
+  .CTA_signOutLink {
+    text-decoration: underline;
+  }
   .CTA__SignUpButton {
     background-color: transparent;
     border-radius: 20px;
@@ -110,13 +157,26 @@
     color: c.$primary;
     font-weight: 600;
   }
+  .CTA__SupportDonateButton {
+    background-color: #fff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    color: c.$primary;
+    font-weight: 600;
+  }
 }
 
 .codeBehindCTA {
   background-color: c.$primary;
 }
 
-@media only screen and (max-width: 768px) {
+footer {
+  .footerLeft {
+    text-align: right;
+  }
+}
+
+@media only screen and (max-width: 765px) {
   .ant-layout-header {
     padding: 0 25px;
   }
@@ -129,15 +189,44 @@
   .CTA {
     padding: 2em 25px;
   }
+  .hero {
+    .existingSub {
+      font-size: 2.5em;
+      margin: 0.25em;
+    }
+    .heroImage {
+      width: 100%;
+      img {
+        width: 100%;
+        margin-top: 2em;
+        height: 200px;
+        object-fit: cover;
+        object-position: 0 -10px;
+      }
+    }
+  }
 
-  .heroImage > img {
-    margin-top: 2em;
-    height: 200px;
+  .summaryAbout {
+    overflow: hidden;
+    .aboutImg {
+      position: relative;
+      margin-bottom: -5em;
+      object-position: 0 -55px;
+    }
+  }
+  footer {
+    .footerLeft,
+    .footerRight {
+      text-align: center;
+    }
   }
 }
 
 @media only screen and (max-width: 400px) {
-  .heroImage > img {
+  .heroImage {
     width: 100%;
+    img {
+      width: 100%;
+    }
   }
 }

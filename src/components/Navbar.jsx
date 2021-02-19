@@ -1,9 +1,9 @@
-import { NavLink } from 'react-router-dom';
-import { MenuOutlined } from '@ant-design/icons';
+import { Link, NavLink } from "react-router-dom";
+import { MenuOutlined } from "@ant-design/icons";
 
-import NavLinks from './NavLinks';
-import useDimension from '../utils/useDimensions';
-import { Menu } from 'antd';
+import NavLinks from "./NavLinks";
+import useDimension from "../utils/useDimensions";
+import { Menu } from "antd";
 
 const { SubMenu, Item } = Menu;
 
@@ -14,21 +14,23 @@ const Navbar = ({ classes }) => {
   return (
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        width: '100%',
-        maxWidth: '1920px',
-        margin: '0 auto',
-        height: '100%',
+        display: "flex",
+        justifyContent: "space-between",
+        width: "100%",
+        maxWidth: "1920px",
+        margin: "0 auto",
+        height: "100%",
       }}
     >
       <p className={`logo ${rootClass}__brand`}>
-        <strong>Richard Arnold</strong>
+        <Link to="/">
+          <strong>Richard Arnold</strong>
+        </Link>
       </p>
       <Menu
         theme="light"
         mode="horizontal"
-        defaultSelectedKeys={['NavBarItem-1']}
+        defaultSelectedKeys={["NavBarItem-1"]}
       >
         {x > 768 ? (
           NavLinks.map((link, i) => (
@@ -37,7 +39,7 @@ const Navbar = ({ classes }) => {
                 to={link.url}
                 key={`NavBarItem-${i + 1}`}
                 className={`${rootClass}__NavLink${
-                  link.class ? ` ${link.class}` : ''
+                  link.class ? ` ${link.class}` : ""
                 }`}
               >
                 {link.label}
@@ -52,7 +54,7 @@ const Navbar = ({ classes }) => {
                   to={link.url}
                   key={`NavBarItem-${i + 1}`}
                   className={`${rootClass}__NavLink${
-                    link.class ? ` ${link.class}` : ''
+                    link.class ? ` ${link.class}` : ""
                   }`}
                 >
                   {link.label}
