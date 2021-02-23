@@ -8,6 +8,8 @@ import Issues from "./views/Issues";
 import FooterView from "./components/Footer";
 import DonateView from "./views/Donate";
 import { Layout } from "antd";
+import ComingSoonPage from "./views/ComingSoon";
+
 
 const { Header, Footer, Content } = Layout;
 
@@ -27,7 +29,7 @@ function App() {
       <Content className="mainContent">
         <Route path="/about" component={About} />
         <Route path="/issues" component={Issues} />
-        <Route path="/donate" component={DonateView} />
+        <Route path="/donate" component={ComingSoonPage} />
         <Route exact path="/" component={Home} />
       </Content>
       <Footer>
