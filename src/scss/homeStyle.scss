@@ -28,11 +28,11 @@
     justify-self: center;
     max-height: 375px;
 
-    mask-image: radial-gradient(farthest-side, #fff 80%, transparent 100%);
+    mask-image: radial-gradient(closest-side, #fff 60%, transparent 100%);
     img {
       height: 100%;
       width: 100%;
-      object-fit: cover;
+      object-fit: contain;
       transition: all 0.2s ease-in-out;
     }
   }

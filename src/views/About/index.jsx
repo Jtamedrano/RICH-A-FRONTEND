@@ -12,6 +12,7 @@ const AboutView = () => {
         flexFlow: "column nowrap",
         width: "80%",
         margin: "0 auto",
+        textAlign: "center",
       }}
     >
       <h2>Meet Richard</h2>
