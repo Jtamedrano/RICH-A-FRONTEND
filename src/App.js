@@ -10,6 +10,7 @@ import DonateView from "./views/Donate";
 import { Layout } from "antd";
 import ComingSoonPage from "./views/ComingSoon";
 
+
 const { Header, Footer, Content } = Layout;
 
 function App() {
