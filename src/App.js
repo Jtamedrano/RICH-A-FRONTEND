@@ -6,7 +6,6 @@ import Home from "./views/Home";
 import About from "./views/About";
 import Issues from "./views/Issues";
 import FooterView from "./components/Footer";
-import DonateView from "./views/Donate";
 import { Layout } from "antd";
 import ComingSoonPage from "./views/ComingSoon";
 
