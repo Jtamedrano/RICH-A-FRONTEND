@@ -60,7 +60,7 @@ const DonationSelect = (props) => {
         } else {
           if (result.paymentIntent.status === "succeeded") {
             console.log("payment success");
-            history.push("/");
+            history.push("/payment-confirmation/" + props.donateAmount * 100);
           }
         }
       });

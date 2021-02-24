@@ -8,6 +8,7 @@ import Issues from "./views/Issues";
 import FooterView from "./components/Footer";
 import { Layout } from "antd";
 import ComingSoonPage from "./views/ComingSoon";
+import PaymentConfirmationView from "./views/PaymentConfirmation";
 
 const { Header, Footer, Content } = Layout;
 
@@ -25,6 +26,10 @@ function App() {
         <Navbar classes={["navbar"]} />
       </Header>
       <Content className="mainContent">
+        <Route
+          path="/payment-confirmation/:payment"
+          component={PaymentConfirmationView}
+        />
         <Route path="/about" component={About} />
         <Route path="/issues" component={Issues} />
         <Route path="/donate" component={ComingSoonPage} />
