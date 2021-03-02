@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="footerLeft">
             <Paragraph>Paid for by Richard Arnold for Oregon</Paragraph>
             <Paragraph style={{ fontSize: ".8em" }}>
-              Design By <a href="jtamedrano.com">Jesse Medrano</a> from
+              Developed By <a href="jtamedrano.com">Jesse Medrano</a> from
               JavaScript Lifestyle
             </Paragraph>
           </div>
