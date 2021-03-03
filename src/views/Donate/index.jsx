@@ -6,12 +6,13 @@ import {
   useStripe,
   CardElement,
 } from "@stripe/react-stripe-js";
-import { Button, InputNumber } from "antd";
+import { Button, Input, InputNumber } from "antd";
 import { useHistory } from "react-router";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 const promise = loadStripe(
-  "pk_test_51ILuGXJAmJznCXFuA4TOyAXzithQO6UzkcqhuYnw8l6JvixiHCphevXjKgzvTLAcx2UK2KpKENlP2nuTC2K6sOzy00Rtuv5QND"
+  "pk_live_51ILuGXJAmJznCXFu6m8PsTPqp7Dmpkkllug5HnD7Zp2OA1zwPU1TVoxrXcfkbgLAKC5T0un9juVXkUXJ7BjxO69n00FnnOLh06"
 );
 
 const SelectionButton = ({ value, setDonationAmount }) => {
@@ -29,6 +30,7 @@ const SelectionButton = ({ value, setDonationAmount }) => {
 const donationOptions = [5, 10, 20, 25, 50, 100];
 
 const DonationSelect = (props) => {
+  const { userName, userEmail } = props.user;
   const [error, setError] = useState(null);
   const [processing, setProcessing] = useState(false);
 
@@ -53,6 +55,10 @@ const DonationSelect = (props) => {
         const result = await stripe.confirmCardPayment(res.data.client_secret, {
           payment_method: {
             card: elements.getElement(CardElement),
+            billing_details: {
+              email: !!userEmail ? userEmail : "",
+              name: !!userName ? userName : "",
+            },
           },
         });
         if (result.error) {
@@ -134,14 +140,35 @@ const DonationSelect = (props) => {
 const DonateView = () => {
   const [donateAmount, setDonateAmount] = useState(undefined);
   const [donationSlide, setDonationSlide] = useState(0);
-
+  const user = useSelector((state) => {
+    if (state.subscriber.currentSubscriber !== null) {
+      const { firstName, lastName, email } = state.subscriber.currentSubscriber;
+      return {
+        userName: `${firstName} ${lastName}`,
+        userEmail: email,
+      };
+    }
+  });
+  const [inputUser, setInputUser] = useState({
+    userName: "",
+    userEmail: "",
+  });
   useEffect(() => {
     setDonateAmount(undefined);
   }, []);
 
+  const handleUserInputChange = (e) => {
+    setInputUser({ ...inputUser, [e.target.name]: e.target.value });
+  };
+
   const pushToNextSlide = () => {
     setDonationSlide(donationSlide + 1);
   };
+
+  const ready =
+    donationSlide === 1 ||
+    user?.userName !== undefined ||
+    inputUser?.userName !== "";
 
   return (
     <>
@@ -149,9 +176,43 @@ const DonateView = () => {
         <img src="/images/students.png" alt="students graduating" />
       </div>
       <div className="paymentView">
-        {donationSlide === 0 && (
+        {donationSlide === 0 && user?.userName === undefined && (
+          <div className="payment-prescreen">
+            <div>
+              <h2>Billing Information</h2>
+              <hr />
+              <div>
+                <label>First Name: </label>
+                <Input
+                  name="userName"
+                  placeholder="First Name"
+                  onChange={handleUserInputChange}
+                />
+              </div>
+              <div>
+                <label>Email: </label>
+                <Input
+                  name="userEmail"
+                  placeholder="E-mail"
+                  onChange={handleUserInputChange}
+                />
+              </div>
+            </div>
+            <Button
+              onClick={() => pushToNextSlide()}
+              style={{ margin: ".5em 0" }}
+            >
+              Continue
+            </Button>
+            <p style={{ fontSize: "0.8em" }}>
+              Leave Empty For Anonymous Donation
+            </p>
+          </div>
+        )}
+        {ready && (
           <Elements stripe={promise}>
             <DonationSelect
+              user={user?.userName !== undefined ? user : inputUser}
               donateAmount={donateAmount}
               setDonateAmount={(amount) => setDonateAmount(amount)}
               pushToNextSlide={pushToNextSlide}

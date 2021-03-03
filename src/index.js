@@ -1,13 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
-
-import App from './App';
-import { store } from './redux/store/index';
-
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { BrowserRouter as Router } from "react-router-dom";
+import App from "./App";
+import { store } from "./redux/store/index";
 // Reset Style
-import './scss/indexStyle.scss';
+import "./scss/indexStyle.scss";
+
+console.log(process.env.REACT_APP_TEST);
 
 ReactDOM.render(
   <Provider store={store}>
@@ -15,5 +15,5 @@ ReactDOM.render(
       <App />
     </Router>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

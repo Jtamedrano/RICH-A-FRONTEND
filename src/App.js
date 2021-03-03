@@ -9,6 +9,7 @@ import FooterView from "./components/Footer";
 import { Layout } from "antd";
 import ComingSoonPage from "./views/ComingSoon";
 import PaymentConfirmationView from "./views/PaymentConfirmation";
+import DonateView from "./views/Donate";
 
 const { Header, Footer, Content } = Layout;
 
@@ -32,7 +33,7 @@ function App() {
         />
         <Route path="/about" component={About} />
         <Route path="/issues" component={Issues} />
-        <Route path="/donate" component={ComingSoonPage} />
+        <Route path="/donate" component={DonateView} />
         <Route exact path="/" component={Home} />
       </Content>
       <Footer>
