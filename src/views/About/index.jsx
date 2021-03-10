@@ -46,9 +46,9 @@ const AboutView = () => {
           revenue streams affect our children’s classroom experience. I have
           also offered my advice through these bodies to try and effect
           meaningful change so that the district’s efforts are more transparent,
-          and more meaningful measures provided to the community. I would not
+          and more meaningful measures are provided to the community. I would not
           consider my time wasted on these committees, but I have come to
-          realize that the only to create a meaningful change is to actually
+          realize that the only way to create a meaningful change is to actually
           serve on the school board.
         </p>
         <p>
@@ -65,7 +65,7 @@ const AboutView = () => {
           that cuts across all demographics within our community, yet our school
           board has been hesitant to hold the district accountable to state
           achievement standards. I have watched as scarce discretionary
-          resources are used for things that are items that are not directly
+          resources are used for items that are not directly
           related to classroom instruction, and wish to see more of these
           resources re-directed back to the classroom.
         </p>

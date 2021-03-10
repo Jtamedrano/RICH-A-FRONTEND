@@ -13,7 +13,7 @@ const Footer = () => {
       >
         <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 12 }}>
           <div className="footerLeft">
-            <Paragraph>Sponsered by Richard Arnold for Oregon</Paragraph>
+            <Paragraph>Paid for by "Rich Arnold for Oregon"</Paragraph>
             <Paragraph style={{ fontSize: ".8em" }}>
               Developed By <a href="jtamedrano.com">Jesse Medrano</a> from
               JavaScript Lifestyle

@@ -18,7 +18,7 @@ const issues = [
     imgLink: 'classroom',
     header: 'Getting Students Back In School Safely',
     body:
-      'All of our students have had their educational futures impacted by COVID-19.  I will work with the school district to help ensure that all necessary safety protocols are in place so that a return to in-person learning is as safe as possible.  I will also advocate that assessments be completed at the beginning of the 2021-2022 academic year to identify those students who were left behind and are not working at grade level.  We must ensure all children can meet their full academic potential.',
+      'All of our students have had their educational futures impacted by COVID-19.  I will work with the school district to help ensure that all necessary safety protocols are in place so that a return to in-person learning is as safe as possible.  I will also advocate that assessments be completed at the beginning of the 2021-2022 academic year to identify those students who are not working at grade level.  We must ensure all children can meet their full academic potential.',
   },
 ];
 

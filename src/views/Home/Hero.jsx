@@ -13,7 +13,7 @@ const Hero = () => {
         lg={{ order: 1, span: 16 }}
         className="heroParagraph"
       >
-        <Title level={2}>Corvallis, Ready For Change</Title>
+        <Title level={2}>Creating hope, community, and lasting change through transitional times</Title>
         <p>
           Every student deserves the opportunity to reach their full academic
           potential, but until our school board has leadership in place that
