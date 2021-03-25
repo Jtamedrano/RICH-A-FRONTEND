@@ -147,7 +147,7 @@ const MainHomeView = (props) => {
       <header>
         <h1>Hello {admin.name}</h1>
         <ButtonGroup>
-          {admin.role !== "Owner" && (
+          {admin.role === "Owner" && (
             <Button
               onClick={() => {
                 setVisible(true);
